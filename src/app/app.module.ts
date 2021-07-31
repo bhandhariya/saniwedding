@@ -14,6 +14,11 @@ import { RsvpComponent } from './component/rsvp/rsvp.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from "@angular/fire/storage";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +34,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule,ReactiveFormsModule
+    AppRoutingModule,FormsModule,ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,AngularFireStorageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

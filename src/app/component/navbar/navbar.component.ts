@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireStorage } from "@angular/fire/storage";
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private storage: AngularFireStorage
+  ) { }
 
   ngOnInit(): void {
   }
@@ -15,7 +18,19 @@ export class NavbarComponent implements OnInit {
     alert('eorking')
   }
   upload(event){
-    console.log(event.target.files);
+    let files = event.target.files;
+  
+    console.log(files.length);
+    
+    for (let index = 0; index < files.length; index++) {
+      const element = files[index];
+      let time= Date.now();
+      const filePath = `wed/${time}`;
+      const task = this.storage.upload(filePath, element);
+     
+            
+    }
+   
     
   }
 

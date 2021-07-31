@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "sani-wedding": {
+      "hosting": {
+        "webapp": [
+          "sani-wedding"
+        ]
+      }
+    }
+  }
+}
