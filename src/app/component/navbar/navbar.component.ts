@@ -11,5 +11,12 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  open(){
+    alert('eorking')
+  }
+  upload(event){
+    console.log(event.target.files);
+    
+  }
 
 }

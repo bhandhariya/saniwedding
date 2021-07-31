@@ -12,6 +12,7 @@ import { RadhaPeopleComponent } from './component/radha-people/radha-people.comp
 import { GalaryComponent } from './component/galary/galary.component';
 import { RsvpComponent } from './component/rsvp/rsvp.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { FooterComponent } from './component/footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,FormsModule,ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
