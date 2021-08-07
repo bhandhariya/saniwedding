@@ -58,8 +58,8 @@
           </div>
           <div class="carousel-item">
             <div class="row">
-              <div class="col-md-4">
-                <div class="card d-block mb-3"><img class="card-img-top" src="../../../assets/images/raja sakhi.jpg"
+              <div class="col-md-4" *ngFor="let i of people;let j=index" >
+                <div class="card d-block mb-3"><img class="card-img-top" src="{{i.url}}"
                     alt="Bride Maid 1" />
                   <div class="card-body text-center">
                     <div class="h5">bhai & Bhabhi</div>
@@ -72,34 +72,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class="card d-block mb-3"><img class="card-img-top" src="../../../assets/images/ravi.jpg"
-                    alt="Bride Maid 2" />
-                  <div class="card-body text-center">
-                    <div class="h5 text-center">Brother</div>
-                   
-                    <div class="ww-social-links"><a class="btn btn-link" href="#"><i class="fab fa-facebook-f"
-                          aria-hidden="true"></i></a><a class="btn btn-link" href="#"><i class="fab fa-twitter"
-                          aria-hidden="true"></i></a><a class="btn btn-link" href="#"><i class="fab fa-google-plus-g"
-                          aria-hidden="true"></i></a><a class="btn btn-link" href="#"><i class="fab fa-instagram"
-                          aria-hidden="true"></i></a></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="card d-block mb-3"><img class="card-img-top" src="../../../assets/images/pooja.jpg"
-                    alt="Bride Maid 3" />
-                  <div class="card-body text-center">
-                    <div class="h5 text-center">pooja Di</div>
-                    
-                    <div class="ww-social-links"><a class="btn btn-link" href="#"><i class="fab fa-facebook-f"
-                          aria-hidden="true"></i></a><a class="btn btn-link" href="#"><i class="fab fa-twitter"
-                          aria-hidden="true"></i></a><a class="btn btn-link" href="#"><i class="fab fa-google-plus-g"
-                          aria-hidden="true"></i></a><a class="btn btn-link" href="#"><i class="fab fa-instagram"
-                          aria-hidden="true"></i></a></div>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>

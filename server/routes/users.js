@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var photos = require('../modal.js/photos')
 var Gallery = require('../modal.js/gallary.model')
+var Family = require('../modal.js/family.model')
 
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
@@ -31,6 +32,48 @@ router.get('/gallary', async (req, res,next)=>{
 		next(error)
 	}
 })
+
+
+router.post('/family', async (req, res,next)=>{
+	console.log(req.body);
+	let url = req.body.url;
+	let family = req.body.family;
+	try {
+		let photo =await Family.create({
+			...req.body
+		})
+		console.log(photo);
+		res.send(photo)
+	} catch (error) {
+		next(error)
+	}
+})
+
+router.get('/familyfosain', async (req, res,next)=>{
+	
+	try {
+		let photo =await Family.find({
+			family:'sani'
+		})
+		res.send(photo)
+	} catch (error) {
+		next(error)
+	}
+})
+router.get('/familyfosradha', async (req, res,next)=>{
+	
+	try {
+		let photo =await Family.find({
+			family:'radha'
+		})
+		res.send(photo)
+	} catch (error) {
+		next(error)
+	}
+})
+
+
+
 
 
 

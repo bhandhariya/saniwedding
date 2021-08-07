@@ -76,4 +76,32 @@ export class NavbarComponent implements OnInit {
     }
 
   }
+  selectedFilesa?: FileList;
+  currentFileUploada?: FileUpload;
+  percentagea = 0;
+  selectFilea(event: any): void {
+    this.selectedFilesa = event.target.files;
+  }
+  family:any;
+  uploada(): void {
+    if (this.selectedFilesa) {
+      const file: File | null = this.selectedFilesa.item(0);
+      this.selectedFilesa = undefined;
+
+      if (file) {
+        console.log(file);
+        
+        this.currentFileUploada = new FileUpload(file);
+        this.uploadService.pushFileToStorageforGalarya(this.currentFileUploada,this.family).subscribe(
+          percentage => {
+            this.percentagea = Math.round(percentage ? percentage : 0);
+          },
+          error => {
+            console.log(error);
+          }
+        );
+      }
+    }
+
+  }
 }

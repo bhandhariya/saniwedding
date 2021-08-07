@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SaniPeopleComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(
+    private http:HttpClient,
+  ) { }
+    people:any;
   ngOnInit(): void {
+    this.getMyPeople();
   }
-
+  getMyPeople(){
+    this.http.get('http://localhost:3000/users/familyfosain').subscribe((r:any) => {
+      console.log(r);
+      this.people=r;
+      
+    })
+  }
 }
