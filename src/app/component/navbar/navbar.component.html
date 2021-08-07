@@ -23,5 +23,70 @@
     </nav>
   </div>
 
+ 
+
+<!-- Modal -->
+<div class="modal fade" id="upload" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Upload photos</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+        
+          <div class="card border-primary">
+            <div class="card-body">
+              <h4 class="card-title">Upload for family</h4>
+              <p class="card-text">Text</p>
+            </div>
+          </div>
+
+          
+          <div class="card border-primary">
+            <div class="card-body">
+              <h4 class="card-title">Upload for galary</h4>
+              <div class="form-group">
+                <input type="file" class="form-control-file" (change)="selectFile($event)"  name="" id="" placeholder="" aria-describedby="fileHelpId">
+                <br>
+                <button type="button" class="btn btn-primary"  [disabled]="!selectedFiles"
+                (click)="upload()"  >upload</button>
+              </div>
+              <div *ngIf="currentFileUpload" class="progress mt-2">
+                <div
+                  class="progress-bar progress-bar-info"
+                  role="progressbar"
+                  attr.aria-valuenow="{{ percentage }}"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  [ngStyle]="{ width: percentage + '%' }"
+                >
+                  {{ percentage }}%
+                </div>
+              </div>
+
+            </div>
+          </div>
 
 
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('#exampleModal').on('show.bs.modal', event => {
+    var button = $(event.relatedTarget);
+    var modal = $(this);
+    // Use above variables to manipulate the DOM
+    
+  });
+</script>

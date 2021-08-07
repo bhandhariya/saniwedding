@@ -16,7 +16,7 @@ photos:any;
     this.getAllphotos();
   }
   getAllphotos(){
-    this.http.get('http://localhost:3000/users').subscribe((r:any)=>{
+    this.http.get('http://localhost:3000/users/gallary').subscribe((r:any)=>{
       this.photos=r;
       
     })
