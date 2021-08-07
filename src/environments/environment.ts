@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyDYASQj4-syLiZkGJ1haXjwkuVKvpFI7jM",
+    authDomain:  "sani-wedding.firebaseapp.com",
+    databaseURL: "https://sani-wedding-default-rtdb.firebaseio.com/",
+    projectId: "sani-wedding",
+    storageBucket: "sani-wedding.appspot.com",
+    messagingSenderId:  "G-4CTV4MSZ37"
+  }
 };
 
 /*

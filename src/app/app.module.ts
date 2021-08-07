@@ -12,6 +12,13 @@ import { RadhaPeopleComponent } from './component/radha-people/radha-people.comp
 import { GalaryComponent } from './component/galary/galary.component';
 import { RsvpComponent } from './component/rsvp/rsvp.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from "@angular/fire/storage";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +35,10 @@ import { FooterComponent } from './component/footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,FormsModule,ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,AngularFireStorageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
