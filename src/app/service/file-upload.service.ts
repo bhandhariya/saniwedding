@@ -45,7 +45,7 @@ export class FileUploadService {
    })
     
   }
-  pushFileToStorageforGalarya(fileUpload: FileUpload,family:any): Observable<number | undefined> {
+  pushFileToStorageforGalarya(fileUpload: FileUpload,family:any,name:any): Observable<number | undefined> {
     let time = Date.now();
     const filePath = `${this.basePath}/${time}${fileUpload.file.name}`;
     const storageRef = this.storage.ref(filePath);
@@ -58,7 +58,7 @@ export class FileUploadService {
           
           fileUpload.url = downloadURL;
           fileUpload.name = fileUpload.file.name;
-          this.saveFileDataforfamily(fileUpload,family);
+          this.saveFileDataforfamily(fileUpload,family,name);
         });
       })
     ).subscribe();
@@ -66,11 +66,12 @@ export class FileUploadService {
     return uploadTask.percentageChanges();
   }
 
-  private saveFileDataforfamily(fileUpload: FileUpload,family:any): void {
+  private saveFileDataforfamily(fileUpload: FileUpload,family:any,name:any): void {
     console.log(fileUpload);
     let obj = {
       url: fileUpload.url,
-      family:family
+      family:family,
+      name:name
     }
     console.log(obj);
     

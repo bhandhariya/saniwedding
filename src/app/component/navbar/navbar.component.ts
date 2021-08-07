@@ -83,6 +83,7 @@ export class NavbarComponent implements OnInit {
     this.selectedFilesa = event.target.files;
   }
   family:any;
+  name:any
   uploada(): void {
     if (this.selectedFilesa) {
       const file: File | null = this.selectedFilesa.item(0);
@@ -92,7 +93,7 @@ export class NavbarComponent implements OnInit {
         console.log(file);
         
         this.currentFileUploada = new FileUpload(file);
-        this.uploadService.pushFileToStorageforGalarya(this.currentFileUploada,this.family).subscribe(
+        this.uploadService.pushFileToStorageforGalarya(this.currentFileUploada,this.family,this.name).subscribe(
           percentage => {
             this.percentagea = Math.round(percentage ? percentage : 0);
           },

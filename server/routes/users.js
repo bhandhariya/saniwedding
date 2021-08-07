@@ -36,8 +36,7 @@ router.get('/gallary', async (req, res,next)=>{
 
 router.post('/family', async (req, res,next)=>{
 	console.log(req.body);
-	let url = req.body.url;
-	let family = req.body.family;
+
 	try {
 		let photo =await Family.create({
 			...req.body
