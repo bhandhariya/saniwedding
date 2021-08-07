@@ -11,11 +11,11 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="row">
-              <div class="col-md-4">
-                <div class="card d-block mb-3"><img class="card-img-top" src="../../../assets/images/groom-men-1.jpg"
+              <div class="col-md-4" *ngFor="let i of people" >
+                <div class="card d-block mb-3"><img class="card-img-top" src="{{i.url}}"
                     alt="Groom Men 1" />
                   <div class="card-body text-center">
-                    <div class="h5">Bryan Berry</div>
+                    <div class="h5">{{i.name}}</div>
                     <p class="mb-0 text-muted">Best Friend</p>
                     <p class="text-muted">Groomsmen</p>
                     <div class="ww-social-links"><a class="btn btn-link" href="#"><i class="fab fa-facebook-f"
@@ -26,39 +26,10 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class="card d-block mb-3"><img class="card-img-top" src="../../../assets/images/groom-men-2.jpg"
-                    alt="Groom Men 2" />
-                  <div class="card-body text-center">
-                    <div class="h5 text-center">Kevin Johnston</div>
-                    <p class="mb-0 text-muted">Room Mate</p>
-                    <p class="text-muted">Groomsmen</p>
-                    <div class="ww-social-links"><a class="btn btn-link" href="#"><i class="fab fa-facebook-f"
-                          aria-hidden="true"></i></a><a class="btn btn-link" href="#"><i class="fab fa-twitter"
-                          aria-hidden="true"></i></a><a class="btn btn-link" href="#"><i class="fab fa-google-plus-g"
-                          aria-hidden="true"></i></a><a class="btn btn-link" href="#"><i class="fab fa-instagram"
-                          aria-hidden="true"></i></a></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="card d-block mb-3"><img class="card-img-top" src="../../../assets/images/groom-men-3.jpg"
-                    alt="Groom Men 3" />
-                  <div class="card-body text-center">
-                    <div class="h5 text-center">Arthur Wright</div>
-                    <p class="mb-0 text-muted">Friend</p>
-                    <p class="text-muted">Groomsmen</p>
-                    <div class="ww-social-links"><a class="btn btn-link" href="#"><i class="fab fa-facebook-f"
-                          aria-hidden="true"></i></a><a class="btn btn-link" href="#"><i class="fab fa-twitter"
-                          aria-hidden="true"></i></a><a class="btn btn-link" href="#"><i class="fab fa-google-plus-g"
-                          aria-hidden="true"></i></a><a class="btn btn-link" href="#"><i class="fab fa-instagram"
-                          aria-hidden="true"></i></a></div>
-                  </div>
-                </div>
-              </div>
+            
             </div>
           </div>
-          <div class="carousel-item">
+          <!-- <div class="carousel-item">
             <div class="row">
               <div class="col-md-4">
                 <div class="card d-block mb-3"><img class="card-img-top" src="../../../assets/images/bride-maid-1.jpg"
@@ -106,7 +77,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
