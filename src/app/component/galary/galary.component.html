@@ -10,32 +10,13 @@
             data-filter="wedding">Wedding</a></div>
         <div class="ww-gallery" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300"
           data-aos-duration="1000" data-aos-offset="0">
-          <div class="card-columns">
-            <div class="card" data-groups="[&quot;vacation&quot;,&quot;ceremony&quot;]"><a
-                href="../../../assets/images/img2.jpg " data-toggle="lightbox" data-gallery="ww-gallery"><img
-                  class="img-fluid" src="../../../assets/images/img3.jpg" alt="Gallery Pic 1" /></a></div>
-            <div class="card" data-groups="[&quot;party&quot;,&quot;wedding&quot;]"><a
-                href="../../../assets/images/img4.jpg" data-toggle="lightbox" data-gallery="ww-gallery"><img
-                  class="img-fluid" src="../../../assets/images/img5.jpg" alt="Gallery Pic 2" /></a></div>
-            <div class="card" data-groups="[&quot;vacation&quot;]"><a href="../../../assets/images/img8.jpg"
-                data-toggle="lightbox" data-gallery="ww-gallery"><img class="img-fluid"
-                  src="../../../assets/images/img9.jpg" alt="Gallery Pic 3" /></a></div>
-            <div class="card" data-groups="[&quot;party&quot;,&quot;vacation&quot;]"><a
-                href="../../../assets/images/img10.jpg" data-toggle="lightbox" data-gallery="ww-gallery"><img
-                  class="img-fluid" src="../../../assets/images/img11.jpg" alt="Gallery Pic 4" /></a></div>
-            <div class="card" data-groups="[&quot;vacation&quot;]"><a href="../../../assets/images/img12.jpg"
-                data-toggle="lightbox" data-gallery="ww-gallery"><img class="img-fluid"
-                  src="../../../assets/images/img6.jpg" alt="Gallery Pic 5" /></a></div>
-            <div class="card" data-groups="[&quot;wedding&quot;,&quot;ceremony&quot;,&quot;party&quot;]"><a
-                href="../../../assets/images/img8.jpg" data-toggle="lightbox" data-gallery="ww-gallery"><img
-                  class="img-fluid" src="../../../assets/images/img9.jpg" alt="Gallery Pic 6" /></a></div>
-            <div class="card" data-groups="[&quot;vacation&quot;]"><a href="../../../assets/images/img7.jpg"
-                data-toggle="lightbox" data-gallery="ww-gallery"><img class="img-fluid"
-                  src="../../../assets/images/img13.jpg" alt="Gallery Pic 7" /></a></div>
-            <div class="card" data-groups="[&quot;wedding&quot;,&quot;party&quot;]"><a
-                href="../../../assets/images/img2.jpg" data-toggle="lightbox" data-gallery="ww-gallery"><img
-                  class="img-fluid" src="../../../assets/images/img11.jpg" alt="Gallery Pic 8" /></a></div>
-          </div>
+          <div class="card-columns" *ngFor="let p of photos;let i=index">
+            <div class="card" data-groups="[&quot;vacation&quot;,&quot;ceremony&quot;]">
+              <a
+                href="{{p.url}}" data-gallery="ww-gallery"><img
+                  class="img-fluid" src="{{p.url}}" alt="Gallery Pic {{i+1}}" /></a>
+                
+            </div>
         </div>
       </div>
     </div>

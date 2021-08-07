@@ -39,7 +39,7 @@
           
           <div class="form-group">
             <label for=""></label>
-            <input type="file" class="form-control-file"  (change)="upload($event)"  multiple name="" id="" placeholder="" aria-describedby="fileHelpId">
+            <input type="file" class="form-control-file"  (change)="selectFile($event)"  multiple name="" id="" placeholder="" aria-describedby="fileHelpId">
           
 
 
@@ -48,6 +48,14 @@
 
         </div>
         <div class="modal-footer">
+          <button class="btn btn-primary"
+  class="btn btn-success btn-sm"
+  [disabled]="!selectedFiles"
+  (click)="newupload()"
+>
+  Upload
+</button>
+<button  (click)="resetP()" >reset</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         
         </div>

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GalaryComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(
+    private http:HttpClient
+  ) { }
+photos:any;
   ngOnInit(): void {
+    this.getAllphotos();
+  }
+  getAllphotos(){
+    this.http.get('http://localhost:3000/users').subscribe((r:any)=>{
+      this.photos=r;
+      
+    })
   }
 
 }
