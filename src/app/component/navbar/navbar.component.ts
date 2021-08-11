@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from "@angular/fire/storage";
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { finalize } from 'rxjs/operators';
 import { FileUploadService } from "../../service/file-upload.service";
 import { FileUpload } from "./fileuplad";
@@ -12,14 +13,29 @@ import { FileUpload } from "./fileuplad";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  EventForm:any;
   constructor(
     private storage: AngularFireStorage,
     private uploadService: FileUploadService
 
-  ) { }
-
+  ) { 
+    this.minDate.setDate(this.minDate.getDate() - 1);
+      this.maxDate.setDate(this.maxDate.getDate() + 7);
+      this.bsRangeValue = [this.bsValue, this.maxDate];
+  }
+  bsValue = new Date();
+  bsRangeValue: Date[];
+  maxDate = new Date();
+  minDate = new Date();
   ngOnInit(): void {
+    this.EventForm=new FormGroup({
+    title:new FormControl('',[Validators.required]),
+    address:new FormControl('',[Validators.required]),
+    start:new FormControl('',[Validators.required]),
+    end:new FormControl('',[Validators.required]),
+    description:new FormControl('',[Validators.required]),
+    pic:new FormControl('',[Validators.required]),
+    })
   }
 
   // upload(event){

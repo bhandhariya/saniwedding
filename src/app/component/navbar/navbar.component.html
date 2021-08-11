@@ -1,91 +1,84 @@
 <div class="ww-nav-bar sticky-top bg-light">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container"><a href="#"><svg class="heart" viewBox="0 0 32 29.6">
-            <path
-              d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
-          </svg></a>
-        <h1 class="h2"><a class="pl-4 navbar-brand" href="#">Wonderful Wedding</a></h1>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ww-navbarNav"
-          aria-controls="ww-navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span
-            class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse text-uppercase" id="ww-navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link smooth-scroll" href="#home">Home</a></li>
-            <li class="nav-item"><a class="nav-link smooth-scroll" href="#couple">Couple</a></li>
-            <li class="nav-item"><a class="nav-link smooth-scroll" href="#events">Events</a></li>
-            <li class="nav-item"><a class="nav-link smooth-scroll" href="#people">People</a></li>
-            <li class="nav-item"><a class="nav-link smooth-scroll" href="#gallery">Gallery</a></li>
-            <li class="nav-item"><a class="nav-link smooth-scroll" href="#rsvp">RSVP</a></li>
-            <li class="nav-item"><a class="nav-link smooth-scroll"  data-toggle="modal" data-target="#upload"    >Upload</a></li>
-          </ul>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container"><a href="#"><svg class="heart" viewBox="0 0 32 29.6">
+          <path
+            d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
+        </svg></a>
+      <h1 class="h2"><a class="pl-4 navbar-brand" href="#">Wonderful Wedding</a></h1>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ww-navbarNav"
+        aria-controls="ww-navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse text-uppercase" id="ww-navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link smooth-scroll" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link smooth-scroll" href="#couple">Couple</a></li>
+          <li class="nav-item"><a class="nav-link smooth-scroll" href="#events">Events</a></li>
+          <li class="nav-item"><a class="nav-link smooth-scroll" href="#people">People</a></li>
+          <li class="nav-item"><a class="nav-link smooth-scroll" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link smooth-scroll" href="#rsvp">RSVP</a></li>
+          <li class="nav-item"><a class="nav-link smooth-scroll" data-toggle="modal" data-target="#upload">Upload</a>
+          </li>
+          <li class="nav-item"><a class="nav-link smooth-scroll" data-toggle="modal" data-target="#event">Events</a>
+          </li>
+        </ul>
       </div>
-    </nav>
-  </div>
+    </div>
+  </nav>
+</div>
 
- 
 
-<!-- Modal -->
+
+<!-- photo upload -->
 <div class="modal fade" id="upload" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title">Upload photos</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-          </div>
+      <div class="modal-header">
+        <h5 class="modal-title">Upload photos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
       <div class="modal-body">
         <div class="container-fluid">
-        
+
           <div class="card border-primary">
             <div class="card-body">
               <h4 class="card-title">Upload for family</h4>
-              <div class="form-group"  >
-                <input type="text" name=""  [(ngModel)]="name" id="">
-                <select [(ngModel)]="family" >
+              <div class="form-group">
+                <input type="text" name="" [(ngModel)]="name" id="">
+                <select [(ngModel)]="family">
                   <option value="sani">sani</option>
                   <option value="radha">radha</option>
                 </select>
-                <input type="file" class="form-control-file" (change)="selectFilea($event)"  name="" id="" placeholder="" aria-describedby="fileHelpId">
+                <input type="file" class="form-control-file" (change)="selectFilea($event)" name="" id="" placeholder=""
+                  aria-describedby="fileHelpId">
                 <br>
-                <button type="button" class="btn btn-primary"  [disabled]="!selectedFilesa"
-                (click)="uploada()"  >upload</button>
+                <button type="button" class="btn btn-primary" [disabled]="!selectedFilesa"
+                  (click)="uploada()">upload</button>
               </div>
               <div *ngIf="currentFileUploada" class="progress mt-2">
-                <div
-                  class="progress-bar progress-bar-info"
-                  role="progressbar"
-                  attr.aria-valuenow="{{ percentagea }}"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  [ngStyle]="{ width: percentage + '%' }"
-                >
+                <div class="progress-bar progress-bar-info" role="progressbar" attr.aria-valuenow="{{ percentagea }}"
+                  aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: percentage + '%' }">
                   {{ percentagea }}%
                 </div>
               </div>
             </div>
           </div>
 
-          
+
           <div class="card border-primary">
             <div class="card-body">
               <h4 class="card-title">Upload for galary</h4>
               <div class="form-group">
-                <input type="file" class="form-control-file" (change)="selectFile($event)"  name="" id="" placeholder="" aria-describedby="fileHelpId">
+                <input type="file" class="form-control-file" (change)="selectFile($event)" name="" id="" placeholder=""
+                  aria-describedby="fileHelpId">
                 <br>
-                <button type="button" class="btn btn-primary"  [disabled]="!selectedFiles"
-                (click)="upload()"  >upload</button>
+                <button type="button" class="btn btn-primary" [disabled]="!selectedFiles"
+                  (click)="upload()">upload</button>
               </div>
               <div *ngIf="currentFileUpload" class="progress mt-2">
-                <div
-                  class="progress-bar progress-bar-info"
-                  role="progressbar"
-                  attr.aria-valuenow="{{ percentage }}"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  [ngStyle]="{ width: percentage + '%' }"
-                >
+                <div class="progress-bar progress-bar-info" role="progressbar" attr.aria-valuenow="{{ percentage }}"
+                  aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: percentage + '%' }">
                   {{ percentage }}%
                 </div>
               </div>
@@ -104,11 +97,35 @@
   </div>
 </div>
 
-<script>
-  $('#exampleModal').on('show.bs.modal', event => {
-    var button = $(event.relatedTarget);
-    var modal = $(this);
-    // Use above variables to manipulate the DOM
-    
-  });
-</script>
+
+<!-- add event -->
+<div class="modal fade" id="event" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Event</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" [formGroup]="EventForm">
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" placeholder="Enter Title"  formControlName="title" >
+        </div>
+        <div class="form-group">
+          <label >Address</label>
+          <input type="text" class="form-control"  placeholder="Enter Address" formControlName="address"   >
+        </div>
+        <div class="form-group">
+          <label >Description</label>
+          <textarea class="form-control"  placeholder="Enter Description" formControlName="description" cols="30" rows="10"></textarea>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -19,6 +19,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from "@angular/fire/storage";
 import { HttpClientModule } from '@angular/common/http';
+import { BsDatepickerModule, BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     AppRoutingModule,FormsModule,ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,AngularFireStorageModule,
+    AngularFirestoreModule,AngularFireStorageModule,BsDatepickerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
