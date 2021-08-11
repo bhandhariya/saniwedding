@@ -11,5 +11,6 @@ export class SaniPeopleComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  resetP(){}
+  
 }
