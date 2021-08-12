@@ -46,7 +46,10 @@ export class NavbarComponent implements OnInit {
     })
     if(this.EventForm.valid){
       console.log(this.EventForm.value);
-      
+      this.uploadService.createEvent(this.EventForm.value).subscribe((result:any)=>{
+        console.log(result);
+        
+      })
     }else{
       alert('please fill all the details');
     }

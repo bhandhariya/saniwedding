@@ -116,5 +116,10 @@ export class FileUploadService {
 
     return uploadTask.percentageChanges();
   }
+
+
+  createEvent(data:any){
+  return   this.http.post('http://localhost:3000/users/event',data)
+  }
   
 }

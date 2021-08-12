@@ -3,6 +3,7 @@ var router = express.Router();
 var photos = require('../modal.js/photos')
 var Gallery = require('../modal.js/gallary.model')
 var Family = require('../modal.js/family.model')
+var Event = require('../modal.js/event.modal')
 
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
@@ -69,6 +70,19 @@ router.get('/familyfosradha', async (req, res,next)=>{
 	} catch (error) {
 		next(error)
 	}
+})
+
+
+router.post('/event',async (req,res,next)=>{
+	let data =  req.body;
+	let event = await Event.create({...data})
+	res.send(event);
+})
+
+router.get('/event',async (req,res,next)=>{
+	
+	let events = await Event.find({})
+	res.send(events);
 })
 
 
