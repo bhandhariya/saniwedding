@@ -31,41 +31,26 @@ export class NavbarComponent implements OnInit {
     this.EventForm=new FormGroup({
     title:new FormControl('',[Validators.required]),
     address:new FormControl('',[Validators.required]),
-    start:new FormControl('',[Validators.required]),
-    end:new FormControl('',[Validators.required]),
+    StartDate:new FormControl('',[Validators.required]),
+    Enddate:new FormControl('',[Validators.required]),
     description:new FormControl('',[Validators.required]),
     pic:new FormControl('',[Validators.required]),
     })
   }
+    
 
-  // upload(event){
-  //   let AllFiles=[]
-  //   let files = event.target.files;
-  
-  //   console.log(files.length);
     
-  //   for (let index = 0; index < files.length; index++) {
-  //     const element = files[index];
-  //     let time= Date.now();
-  //     const filePath = `wed/${time}`;
-  //     const uploadTask  = this.storage.upload(filePath, element);
-  //     const storageRef = this.storage.ref(filePath);
-  //     uploadTask.snapshotChanges().pipe(
-  //       finalize(() => {
-  //         storageRef.getDownloadURL().subscribe(downloadURL => {
-  //          AllFiles.push(downloadURL)
-           
-  //         });
-  //       })
-  //     ).subscribe();
+  uploadEvent(){
+    this.uploadService.eventurl.subscribe((r:any)=>{
+      this.EventForm.get('pic').setValue(r)
+    })
+    if(this.EventForm.valid){
+      console.log(this.EventForm.value);
       
-            
-  //   }
-   
-  //   console.log(AllFiles);
-    
-    
-  // }
+    }else{
+      alert('please fill all the details');
+    }
+  }
 
   selectedFiles?: FileList;
   currentFileUpload?: FileUpload;
@@ -116,9 +101,17 @@ export class NavbarComponent implements OnInit {
           error => {
             console.log(error);
           }
+          
         );
       }
     }
 
   }
+  uplaodEventImage(event:any){
+    console.log(event.target.files);
+    let file = event.target.files[0];
+    this.uploadService.pushFileToStorageforevent(file);    
+  }
+
 }
+

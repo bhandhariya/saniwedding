@@ -108,10 +108,23 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <form action=""></form>
       <div class="modal-body" [formGroup]="EventForm">
+        <div class="form-group">
+          <label>Pic</label>
+          <input type="file" class="form-control" placeholder="Select file"  (change)="uplaodEventImage($event)" >
+        </div>
         <div class="form-group">
           <label>Title</label>
           <input type="text" class="form-control" placeholder="Enter Title"  formControlName="title" >
+        </div>
+        <div class="form-group">
+          <label>StartDate</label>
+          <input type="datetime-local" class="form-control" placeholder=" Enter date"  formControlName="StartDate">
+        </div>
+        <div class="form-group">
+          <label>Enddate</label>
+          <input type="datetime-local" class="form-control" placeholder=" Enter date"  formControlName="Enddate" >
         </div>
         <div class="form-group">
           <label >Address</label>
@@ -124,7 +137,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-primary" (click)="uploadEvent()">Save</button>
       </div>
     </div>
   </div>
