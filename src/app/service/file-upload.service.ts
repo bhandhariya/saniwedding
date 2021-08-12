@@ -65,6 +65,26 @@ export class FileUploadService {
 
     return uploadTask.percentageChanges();
   }
+  pushFileToStorageforEvents2(fileUpload: FileUpload): Observable<number | undefined> {
+    let time = Date.now();
+    const filePath = `${this.basePath}/${time}${fileUpload.file.name}`;
+    const storageRef = this.storage.ref(filePath);
+    const uploadTask = this.storage.upload(filePath, fileUpload.file);
+
+    uploadTask.snapshotChanges().pipe(
+      finalize(() => {
+        storageRef.getDownloadURL().subscribe(downloadURL => {
+          console.log(downloadURL);
+         this.eventurl.next(downloadURL) 
+          // fileUpload.url = downloadURL;
+          // fileUpload.name = fileUpload.file.name;
+          // this.saveFileDataforfamily(fileUpload,family,name);
+        });
+      })
+    ).subscribe();
+
+    return uploadTask.percentageChanges();
+  }
 
   private saveFileDataforfamily(fileUpload: FileUpload,family:any,name:any): void {
     console.log(fileUpload);

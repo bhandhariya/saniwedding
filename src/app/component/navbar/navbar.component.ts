@@ -4,7 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { finalize } from 'rxjs/operators';
 import { FileUploadService } from "../../service/file-upload.service";
 import { FileUpload } from "./fileuplad";
-
+import Swal from 'sweetalert2'
 
 
 @Component({
@@ -42,16 +42,22 @@ export class NavbarComponent implements OnInit {
     
   uploadEvent(){
     this.uploadService.eventurl.subscribe((r:any)=>{
+      console.log(r);
+      
       this.EventForm.get('pic').setValue(r)
     })
     if(this.EventForm.valid){
       console.log(this.EventForm.value);
       this.uploadService.createEvent(this.EventForm.value).subscribe((result:any)=>{
         console.log(result);
+      Swal.fire('uploaded');
+      this.EventForm.reset();
         
       })
     }else{
       alert('please fill all the details');
+      console.log(this.EventForm.value);
+      
     }
   }
 
@@ -110,11 +116,34 @@ export class NavbarComponent implements OnInit {
     }
 
   }
-  uplaodEventImage(event:any){
-    console.log(event.target.files);
-    let file = event.target.files[0];
-    this.uploadService.pushFileToStorageforevent(file);    
+  eventPercentege=0;
+  uploadEventImage(event: any): void {
+    if (event.target.files) {
+      const file: File | null = event.target.files.item(0);
+      event.target.files = undefined;
+
+      if (file) {
+        console.log(file);
+        
+        this.currentFileUploada = new FileUpload(file);
+        this.uploadService.pushFileToStorageforEvents2(this.currentFileUploada).subscribe(
+          percentage => {
+            this.eventPercentege = Math.round(percentage ? percentage : 0);
+          },
+          error => {
+            console.log(error);
+          }
+          
+        );
+      }
+    }
+
   }
+  // uplaodEventImage(event:any){
+  //   console.log(event.target.files);
+  //   let file = event.target.files[0];
+  //   this.uploadService.pushFileToStorageforevent(file);    
+  // }
 
 }
 

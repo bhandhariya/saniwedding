@@ -112,7 +112,13 @@
       <div class="modal-body" [formGroup]="EventForm">
         <div class="form-group">
           <label>Pic</label>
-          <input type="file" class="form-control" placeholder="Select file"  (change)="uplaodEventImage($event)" >
+          <input type="file" class="form-control" placeholder="Select file"  (change)="uploadEventImage($event)" >
+          <div *ngIf="currentFileUpload" class="progress mt-2">
+            <div class="progress-bar progress-bar-info" role="progressbar" attr.aria-valuenow="{{ eventPercentege }}"
+              aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: eventPercentege + '%' }">
+              {{ eventPercentege }}%
+            </div>
+          </div>
         </div>
         <div class="form-group">
           <label>Title</label>
