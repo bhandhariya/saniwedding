@@ -3,7 +3,7 @@ body {
 
 /* Home Page Style */
 .ww-home-page {
-  background: url("../images/home-img.jpg") no-repeat center center;
+  background: url("https://firebasestorage.googleapis.com/v0/b/sani-wedding.appspot.com/o/photos%2F1628777231220brideandgroom.jpg?alt=media&token=70367c7a-bf8a-4b71-8d7a-64d4dfb4b7bc") no-repeat center center;
   background-size: cover;
   background-position: 70%;
   height: 100vh;
