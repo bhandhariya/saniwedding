@@ -1,9 +1,9 @@
-<!-- <div class="card border-primary">
-    <div class="card-body">
+<div class="card border-primary" [formGroup]="form" >
+    <div class="card-body" >
       <h4 class="card-title">Upload for family</h4>
       <div class="form-group">
-        <input type="text" name="" [(ngModel)]="name" id="">
-        <select [(ngModel)]="family">
+        <input type="text" name="" formControlName="name" id="">
+        <select formControlName="family">
           <option value="sani">sani</option>
           <option value="radha">radha</option>
         </select>
@@ -15,12 +15,9 @@
       </div>
       <div *ngIf="currentFileUploada" class="progress mt-2">
         <div class="progress-bar progress-bar-info" role="progressbar" attr.aria-valuenow="{{ percentagea }}"
-          aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: percentage + '%' }">
+          aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: percentagea + '%' }">
           {{ percentagea }}%
         </div>
       </div>
     </div>
-  </div> -->
-
-
-  family works
+  </div>
