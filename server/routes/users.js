@@ -5,6 +5,8 @@ var Gallery = require('../modal.js/gallary.model')
 var Family = require('../modal.js/family.model')
 var Event = require('../modal.js/event.modal')
 
+var Contact = require('../modal.js/contact')
+
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
 	let result = await photos.find();
@@ -85,6 +87,17 @@ router.get('/event',async (req,res,next)=>{
 	res.send(events);
 })
 
+router.post('/contact',async (req,res,next)=>{
+	let data =  req.body;
+	let contact = await Contact.create({...data})
+	res.send(contact);
+})
+
+router.get('/contact',async (req,res,next)=>{
+
+	let contact = await Contact.find({})
+	res.send(contact);
+})
 
 
 

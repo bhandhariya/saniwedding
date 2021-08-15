@@ -30,6 +30,13 @@
                       <option value="2">Two</option>
                       <option value="3">Three</option>
                       <option value="4">Four</option>
+                      <option value="5">Five</option>
+                      <option value="6">Six</option>
+                      <option value="7">Seven</option>
+                      <option value="8">Eight</option>
+                      <option value="9">Nine</option>
+                      <option value="10">Ten</option>
+                      <option value="11">11</option>
                     </select>
                   </div>
                 </div>
@@ -37,9 +44,9 @@
                   <div class="form-group">
                     <label for="events-input">I am Attending</label>
                     <select class="form-control" id="events-input" formControlName="events" name="events">
-                      <option value="all-event">All Events</option>
-                      <option value="wedding-ceremony">Wedding ceremony</option>
-                      <option value="reception-party">Reception Party</option>
+                      <option [ngValue]="null" disabled>Select Event</option>
+                     <option *ngFor="let event of AllEvents" [ngValue]="event._id">{{event.title}}</option>
+                    
                     </select>
                   </div>
                 </div>

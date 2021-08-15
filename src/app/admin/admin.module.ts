@@ -8,6 +8,7 @@ import { FamilyPicsComponent } from './family-pics/family-pics.component';
 import { BsDatepickerModule, BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
       {path:'event',component: EventComponent},
       {path:'galary',component: GalaryComponent},
       {path:'family',component: FamilyPicsComponent},
+      {path:'contact',component: ContactComponent}
     ]
   }
 ];
