@@ -1,1 +1,21 @@
-<p>galary works!</p>
+<div class="card border-primary">
+    <div class="card-body">
+      <h4 class="card-title">Upload for galary</h4>
+      <div class="form-group">
+        <input type="file" class="form-control-file" (change)="selectFile($event)" name="" id="" placeholder=""
+          aria-describedby="fileHelpId">
+        <br>
+        <button type="button" class="btn btn-primary" [disabled]="!selectedFiles"
+          (click)="upload()">upload</button>
+      </div>
+      <div *ngIf="currentFileUpload" class="progress mt-2">
+        <div class="progress-bar progress-bar-info" role="progressbar" attr.aria-valuenow="{{ percentage }}"
+          aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: percentage + '%' }">
+          {{ percentage }}%
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="reset()" >Reset</button>
+
+    </div>
+
+  </div>
