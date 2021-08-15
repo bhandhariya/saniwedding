@@ -5,6 +5,9 @@ import { HomeComponent } from './home/home.component';
 import { EventComponent } from './event/event.component';
 import { GalaryComponent } from './galary/galary.component';
 import { FamilyPicsComponent } from './family-pics/family-pics.component';
+import { BsDatepickerModule, BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -21,7 +24,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [HomeComponent, EventComponent, GalaryComponent, FamilyPicsComponent],
   imports: [
-    CommonModule,RouterModule.forChild(routes)
+    CommonModule,RouterModule.forChild(routes),FormsModule,ReactiveFormsModule,HttpClientModule
 
   ]
 })

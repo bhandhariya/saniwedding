@@ -1,1 +1,45 @@
-<p>event works!</p>
+<div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Add Event</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <form action=""></form>
+    <div class="modal-body" [formGroup]="EventForm">
+      <div class="form-group">
+        <label>Pic</label>
+        <input type="file" class="form-control" placeholder="Select file"  (change)="uploadEventImage($event)" >
+        <div *ngIf="currentFileUploada" class="progress mt-2">
+          <div class="progress-bar progress-bar-info" role="progressbar" attr.aria-valuenow="{{ eventPercentege }}"
+            aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: eventPercentege + '%' }">
+            {{ eventPercentege }}%
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" placeholder="Enter Title"  formControlName="title" >
+      </div>
+      <div class="form-group">
+        <label>StartDate</label>
+        <input type="datetime-local" class="form-control" placeholder=" Enter date"  formControlName="StartDate">
+      </div>
+      <div class="form-group">
+        <label>Enddate</label>
+        <input type="datetime-local" class="form-control" placeholder=" Enter date"  formControlName="Enddate" >
+      </div>
+      <div class="form-group">
+        <label >Address</label>
+        <input type="text" class="form-control"  placeholder="Enter Address" formControlName="address"   >
+      </div>
+      <div class="form-group">
+        <label >Description</label>
+        <textarea class="form-control"  placeholder="Enter Description" formControlName="description" cols="30" rows="10"></textarea>
+
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="uploadEvent()">Save</button>
+    </div>
+  </div>
