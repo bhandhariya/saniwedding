@@ -95,7 +95,7 @@ router.post('/contact',async (req,res,next)=>{
 
 router.get('/contact',async (req,res,next)=>{
 
-	let contact = await Contact.find({})
+	let contact = await Contact.find({}).populate('events')
 	res.send(contact);
 })
 

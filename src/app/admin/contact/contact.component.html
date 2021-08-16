@@ -1,16 +1,27 @@
+
 <table class="table" *ngIf="Contact"  >
     <thead>
         <tr>
             <th>S.N.</th>
-            <th></th>
-            <th></th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>events</th>
+            <th>Gusts no</th>
+            <th>Message</th>
         </tr>
     </thead>
     <tbody>
         <tr  *ngFor="let c of Contact;let j=index" > 
             <td scope="row">{{j+1}}</td>
-            <td></td>
-            <td></td>
+            <td scopp="row">{{c.name}}</td>
+            <td scopp="row">{{c.email}}</td>
+            <td>{{c.events.title }}</td>
+            <td>
+                {{c.guestNo}}
+            </td>
+            <td>
+                {{c.message}}
+            </td>
         </tr>
 
     </tbody>

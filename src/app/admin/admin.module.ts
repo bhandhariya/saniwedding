@@ -24,7 +24,7 @@ const routes: Routes = [
   }
 ];
 @NgModule({
-  declarations: [HomeComponent, EventComponent, GalaryComponent, FamilyPicsComponent],
+  declarations: [HomeComponent, EventComponent, GalaryComponent, FamilyPicsComponent,ContactComponent],
   imports: [
     CommonModule,RouterModule.forChild(routes),FormsModule,ReactiveFormsModule,HttpClientModule
 

@@ -12,12 +12,18 @@
                   <div class="form-group">
                     <label for="name-input">Your Name*</label>
                     <input class="form-control" formControlName="name"  id="name-input" type="text" name="name" required="required" />
+                    <div class="error"  *ngIf="formErrors.name" >
+                      {{formErrors.name}}
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-6 pb-3">
                   <div class="form-group">
                     <label for="email-input">Your Email*</label>
                     <input class="form-control" id="email-input" formControlName="email"  type="email" name="_replyto" required="required" />
+                    <div class="error"  *ngIf="formErrors.email" >
+                      {{formErrors.email}}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -38,6 +44,9 @@
                       <option value="10">Ten</option>
                       <option value="11">11</option>
                     </select>
+                    <div class="error"  *ngIf="formErrors.guestNo" >
+                      {{formErrors.guestNo}}
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-6 pb-3">
@@ -46,8 +55,11 @@
                     <select class="form-control" id="events-input" formControlName="events" name="events">
                       <option [ngValue]="null" disabled>Select Event</option>
                      <option *ngFor="let event of AllEvents" [ngValue]="event._id">{{event.title}}</option>
-                    
+        
                     </select>
+                    <div class="error"  *ngIf="formErrors.events" >
+                      {{formErrors.events}}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -56,6 +68,9 @@
                   <div class="form-group">
                     <label for="message-input">Your Message</label>
                     <textarea class="form-control" id="message-input" formControlName="message"  name="message" rows="4"></textarea>
+                    <div class="error"  *ngIf="formErrors.message" >
+                      {{formErrors.message}}
+                    </div>
                   </div>
                 </div>
               </div>
