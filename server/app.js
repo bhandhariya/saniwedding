@@ -14,7 +14,7 @@ var app = express();
 
 
 try {
-   mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true }).then(r=>{
+   mongoose.connect('mongodb+srv://raja:sainiraja@cluster0.6dphs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { useNewUrlParser: true }).then(r=>{
     console.log('db connected');
   });
 } catch (error) {
